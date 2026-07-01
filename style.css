@@ -1,0 +1,158 @@
+/* Color Palette Settings for Light and Dark Modes */
+:root {
+    --bg-primary: #f4f6f9;
+    --bg-sidebar: #1e293b;
+    --text-main: #334155;
+    --text-light: #ffffff;
+    --card-bg: #ffffff;
+    --border-color: #cbd5e1;
+    --accent-red: #ef4444;
+    --accent-green: #22c55e;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #0f172a;
+    --bg-sidebar: #020617;
+    --text-main: #f1f5f9;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    transition: background 0.3s ease;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Layout UI styling */
+.sidebar {
+    width: 260px;
+    background-color: var(--bg-sidebar);
+    color: var(--text-light);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar h2 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.sidebar nav ul li:hover, .sidebar nav ul li.active {
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-weight: bold;
+}
+
+#theme-toggle {
+    background: transparent;
+    border: 1px solid var(--text-light);
+    color: var(--text-light);
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Main Panel Dashboard Grid styling */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.high-priority .stat-number { color: var(--accent-red); }
+.resolved .stat-number { color: var(--accent-green); }
+
+/* Analytical Information Table styling */
+.table-section {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.table-actions input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th { background-color: rgba(0,0,0,0.02); }
+
+.badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.badge.high { background-color: #fee2e2; color: #ef4444; }
+.badge.low { background-color: #f1f5f9; color: #64748b; }
+
