@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnalyticsHub - Command Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2>AnalyticsHub</h2>
+            <nav>
+                <ul>
+                    <li class="active">📊 Overview</li>
+                    <li>📥 Grievances</li>
+                    <li>📍 Regional Maps</li>
+                    <li>⚙️ Settings</li>
+                </ul>
+            </nav>
+            <button id="theme-toggle">🌓 Toggle Theme</button>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>District Administration Panel</h1>
+                <p>Real-time Civic Infrastructure Metrics</p>
+            </header>
+
+            <section class="metrics-grid">
+                <div class="card">
+                    <h3>Total Active Grievances</h3>
+                    <p class="stat-number">1,248</p>
+                </div>
+                <div class="card high-priority">
+                    <h3>Critical Bottlenecks</h3>
+                    <p class="stat-number">42</p>
+                </div>
+                <div class="card resolved">
+                    <h3>Resolved This Week</h3>
+                    <p class="stat-number">892</p>
+                </div>
+            </section>
+
+            <section class="table-section">
+                <div class="table-actions">
+                    <input type="text" id="table-search" placeholder="Filter issues by keyword (e.g., water, power)...">
+                </div>
+                
+                <table id="grievance-table">
+                    <thead>
+                        <tr>
+                            <th>Grievance ID</th>
+                            <th>Category Silo</th>
+                            <th>Region / Ward</th>
+                            <th>Priority Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#GR-9021</td>
+                            <td>Water Supply Infrastructure</td>
+                            <td>Ward 4, Main Square</td>
+                            <td><span class="badge high">High</span></td>
+                        </tr>
+                        <tr>
+                            <td>#GR-9022</td>
+                            <td>Electrical Grid Fault</td>
+                            <td>Market Sector B</td>
+                            <td><span class="badge high">High</span></td>
+                        </tr>
+                        <tr>
+                            <td>#GR-9023</td>
+                            <td>Sanitation / Waste Delay</td>
+                            <td>Colony Outer Ring</td>
+                            <td><span class="badge low">Low</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
